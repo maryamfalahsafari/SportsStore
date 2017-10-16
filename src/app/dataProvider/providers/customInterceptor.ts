@@ -12,3 +12,8 @@ export class CustomInterceptor implements HttpInterceptor {
     }
 
 }
+
+//===================================MARYAM=======================
+
+//local storage ro search kon va ya eenke yek service besaz ke tooye safe login , token migirad va eenja anra be resource ha midahad,
+//Agar token valid nabood ya dobare generate kon va ya eenke be safe login bebar karbar ro.

@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from "@angular/platform-browser";
+import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
+import { RouterModule } from '@angular/router';
+
 
 import { StoreComponent } from './store.component';
 import { CheckoutComponent } from './checkout.component';
 import { CartDetailComponent } from './cartDetail.component';
 import { DataProviderModule } from '../dataProvider/dataProvider.module';
 import { SharedModule } from '../shared/shared.module';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [
@@ -16,15 +17,15 @@ import { RouterModule } from '@angular/router';
         CartDetailComponent
     ],
     imports: [
-        BrowserModule,
+        CommonModule,
         FormsModule,
         DataProviderModule,
         SharedModule,
-        RouterModule.forRoot([
+        RouterModule.forChild([
             { path: "store", component: StoreComponent },
             { path: "cart", component: CartDetailComponent },
             { path: "checkout", component: CheckoutComponent },
-            { path: "**", redirectTo: "/store" }])
+            { path: "**", redirectTo: "store" }])
     ],
     exports: [
         StoreComponent,
