@@ -55,9 +55,9 @@ export class StoreComponent {
 
     }
     addProductToCart(product: IProduct) {
-        //console.log(product);
+        console.log(product);
         this.cart.addLine(product);
-        this._router.navigateByUrl('/cart');
+        this._router.navigateByUrl('/store/cart');
     }
 
 }

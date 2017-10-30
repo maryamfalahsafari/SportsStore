@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/observable';
 @Injectable()
 export class ApiService {
 
-    private baseUrl: string = 'http://localhost:3000/api';
+    private baseUrl: string = 'http://localhost/FRC.ProductConfiguration.WebAPI/api';//'http://localhost:3000/api';
 
     constructor(private _http: HttpClient) { }
     //Headers for example :  headers.append('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');

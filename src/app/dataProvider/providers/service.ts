@@ -40,4 +40,34 @@ export class Service {
     createOrder(order: any): Observable<any> {
         return this._api.post('orders', order);
     }
+    authenticate(userInfo: any): Observable<any> {
+        return this._api.post('login', userInfo);
+    }
+    getOfferPriceMaps(type: string, effectiveDate: string, planCode: string): Observable<any> {
+        return this._api.get('Product/GetOfferPriceMaps?type=' + type + '&effectiveDate=' +
+            effectiveDate + '&planCode=' + planCode);
+        //.do(data => { console.log(data); });
+    }
+    updateOfferPriceMaps(offerPriceMaps: any) {
+        return this._api.post('Product/UpdateOfferPriceMaps', offerPriceMaps);
+    }
+    // getTwoTiersByType(type: string): Observable<any> {
+    //     return this._api.get('Product/GetTwoTiersByType?type=' + type);
+    //     //.do(data => { console.log(data); });
+    // }
+    // updateTwoTiers(twoTiers: any) {
+    //     return this._api.post('Product/UpdateTwoTiersByType', twoTiers);
+    // }
+    getTimeOfUses(name: string) {
+        return this._api.get('Product/GetTimeOfUses?name=' + name);
+    }
+    updateTimeOfUses(timeOfUses: any) {
+        return this._api.post('Product/UpdateTimeOfUses', timeOfUses);
+    }
+    getEffectiveDates(type: string, planCode: string) {
+        return this._api.get('Product/GetEffectiveDates?type=' + type + '&planCode=' + planCode);
+    }
+    getTimeOfUseNames() {
+        return this._api.get('Product/GetTimeOfUseNames');
+    }
 }
