@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
+
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 
@@ -17,7 +18,9 @@ import { RouterModule } from '@angular/router';
       { path: "store", loadChildren: "app/store/store.module#StoreModule" },
       { path: "admin", loadChildren: "app/admin/admin.module#AdminModule" },
       { path: "**", redirectTo: "admin" }
-    ])
+    ], {
+      useHash: true
+      })
   ],
   providers: [],
   bootstrap: [AppComponent]
